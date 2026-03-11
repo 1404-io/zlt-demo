@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZLT | 1404</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect width="36" height="36" rx="8" fill="#D4E4DC"/>
+          <rect x="10" y="8" width="16" height="3" rx="1" fill="#2D4A3E"/>
+          <rect x="10" y="14" width="16" height="3" rx="1" fill="#2D4A3E"/>
+          <rect x="10" y="20" width="12" height="3" rx="1" fill="#2D4A3E"/>
+          <rect x="10" y="26" width="8" height="3" rx="1" fill="#2D4A3E"/>
+        </svg>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="sidebar-icon" data-tooltip="Home" onclick="navigate('dashboard')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5L11 3l8 6.5V19a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 013 19V9.5z"/><path d="M8 20.5V12h6v8.5"/></svg>
+        </button>
+        <button class="sidebar-icon" data-tooltip="Accounts" onclick="navigate('accounts')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="16" height="16" rx="2"/><path d="M3 9h16M9 3v16"/></svg>
+        </button>
+        <button class="sidebar-icon" data-tooltip="Analytics" onclick="navigate('dashboard')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 19L8 12l4 4 7-10"/></svg>
+        </button>
+        <button class="sidebar-icon" data-tooltip="Tasks" onclick="navigate('dashboard')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="16" height="16" rx="2"/><path d="M7 11l3 3 5-6"/></svg>
+        </button>
+        <button class="sidebar-icon" data-tooltip="Calendar" onclick="navigate('dashboard')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="16" height="15" rx="2"/><path d="M3 9h16M7 2v4M15 2v4"/></svg>
+        </button>
+        <button class="sidebar-icon" data-tooltip="Settings" onclick="navigate('dashboard')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="16" height="16" rx="2"/><path d="M7 7h8M7 11h8M7 15h5"/></svg>
+        </button>
+      </nav>
+      <div class="sidebar-avatar">
+        <div class="avatar-circle">MR</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Top Navigation -->
+      <header class="topnav">
+        <nav class="topnav-tabs">
+          <button class="tab active" data-page="dashboard" onclick="navigate('dashboard')">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+            Dashboard
+          </button>
+          <button class="tab" data-page="opportunities" onclick="navigate('opportunities')">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 8l7-6 7 6M3 14h10"/></svg>
+            Opportunities
+          </button>
+          <button class="tab" data-page="accounts" onclick="navigate('accounts')">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M2 6h12"/></svg>
+            Accounts
+          </button>
+          <button class="tab" data-page="contacts" onclick="navigate('contacts')">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="5" r="3"/><path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+            Contacts
+          </button>
+        </nav>
+      </header>
+
+      <!-- Page Content -->
+      <div class="page-content">
+
+        <!-- DASHBOARD -->
+        <section id="page-dashboard" class="page active">
+          <div class="page-header">
+            <h1>Good morning, Marcus</h1>
+            <div class="filters">
+              <select class="filter-select"><option>Department</option></select>
+              <select class="filter-select"><option>Region</option></select>
+              <select class="filter-select"><option>Store type</option></select>
+              <button class="filter-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="10" height="10" rx="1"/><path d="M3 7h10"/></svg>
+                Past 90 days
+              </button>
+            </div>
+          </div>
+
+          <!-- Pipeline Card -->
+          <div class="card pipeline-card">
+            <h3>Pipeline by stage</h3>
+            <div class="ai-insight">
+              <span class="ai-icon">&#10024;</span>
+              10 deals stalled in negotiation, suggested to follow up
+            </div>
+            <div class="pipeline-stats">
+              <div class="stat"><span class="stat-label">Pipeline Value</span><span class="stat-value">$8,857,300</span></div>
+              <div class="stat"><span class="stat-label">Average Deal</span><span class="stat-value">$233,087</span></div>
+              <div class="stat"><span class="stat-label">Active Deals</span><span class="stat-value">38</span></div>
+            </div>
+            <div class="pipeline-bar">
+              <div class="bar-segment" style="flex:7;background:#5BA88B" title="Qualifying"></div>
+              <div class="bar-segment" style="flex:6;background:#4ABFB4" title="Needs Analysis"></div>
+              <div class="bar-segment" style="flex:1;background:#3B82F6" title="Est. Prep"></div>
+              <div class="bar-segment" style="flex:6;background:#F59E0B" title="Est. Submitted"></div>
+              <div class="bar-segment" style="flex:4;background:#84CC16" title="Negotiation"></div>
+              <div class="bar-segment" style="flex:3;background:#8B5CF6" title="Verbal Commit"></div>
+            </div>
+            <div class="pipeline-legend">
+              <span><i style="background:#5BA88B"></i> Qualifying</span>
+              <span><i style="background:#4ABFB4"></i> Needs Analysis</span>
+              <span><i style="background:#3B82F6"></i> Est. Prep</span>
+              <span><i style="background:#F59E0B"></i> Est. Submitted</span>
+              <span><i style="background:#84CC16"></i> Negotiation</span>
+              <span><i style="background:#8B5CF6"></i> Verbal Commit</span>
+            </div>
+          </div>
+
+          <!-- Bottom Row -->
+          <div class="dashboard-bottom">
+            <!-- Overdue Follow-ups -->
+            <div class="card overdue-card">
+              <div class="card-header">
+                <h3>Overdue follow-ups</h3>
+                <span class="badge">5</span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>OPPORTUNITY</th>
+                    <th>CONTACT</th>
+                    <th>&#x21C5; OVERDUE</th>
+                    <th>&#x21C5; AMOUNT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr onclick="showOpportunityDetail('lowes-rural')"><td>Lowe's Rural Kitchens</td><td>John D.</td><td class="overdue-val">1 day</td><td>$49,000</td></tr>
+                  <tr onclick="showOpportunityDetail('menards-kitchen')"><td>Menards - Kitchen</td><td>Emma V.</td><td class="overdue-val">2 weeks</td><td>$50,000</td></tr>
+                  <tr onclick="showOpportunityDetail('roofing')"><td>Roofing</td><td>Sarah C.</td><td class="overdue-val">2 weeks</td><td>$109,000</td></tr>
+                  <tr onclick="showOpportunityDetail('abc-renovation')"><td>ABC Renovation</td><td>Tom C.</td><td class="overdue-val">3 weeks</td><td>$1.5 M</td></tr>
+                  <tr onclick="showOpportunityDetail('target-midwest')"><td>Target - Midwest #418</td><td>Mike J.</td><td class="overdue-val">1 month</td><td>$208,000</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Today's Tasks -->
+            <div class="card tasks-card">
+              <div class="card-header">
+                <h3>Today's tasks</h3>
+              </div>
+              <table class="data-table tasks-table">
+                <thead>
+                  <tr><th>TASK NAME</th><th>ACCOUNT</th><th></th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><label class="task-check"><input type="checkbox"><span>Check-in call</span></label></td>
+                    <td><strong>John Doe</strong><br><span class="sub">Lowe's Midwest</span></td>
+                    <td class="task-actions"><button class="icon-btn" title="Notify">&#128276;</button><button class="icon-btn" title="Call">&#128222;</button></td>
+                  </tr>
+                  <tr>
+                    <td><label class="task-check"><input type="checkbox"><span>Respond to client question</span></label></td>
+                    <td><strong>Mike Johnson</strong><br><span class="sub">Target</span></td>
+                    <td class="task-actions"><button class="icon-btn">&#128276;</button><button class="icon-btn">&#9993;</button></td>
+                  </tr>
+                  <tr>
+                    <td><label class="task-check"><input type="checkbox"><span>Follow up on sent quote</span></label></td>
+                    <td><strong>Tom Chen</strong><br><span class="sub">Roofing</span></td>
+                    <td class="task-actions"><button class="icon-btn">&#128276;</button><button class="icon-btn link-icon">&#8599;</button></td>
+                  </tr>
+                  <tr>
+                    <td><label class="task-check"><input type="checkbox"><span>Revise estimate</span></label></td>
+                    <td><strong>John Doe</strong><br><span class="sub">Lowe's Midwest</span></td>
+                    <td class="task-actions"><button class="icon-btn">&#128276;</button><button class="icon-btn link-icon">&#8599;</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- OPPORTUNITIES KANBAN -->
+        <section id="page-opportunities" class="page">
+          <div class="page-header opp-header">
+            <div class="search-bar">
+              <input type="text" placeholder='Ask about your pipeline... "which deals are stalled?"'>
+              <svg class="search-icon" width="18" height="18" fill="none" stroke="#888" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M13 13l4 4"/></svg>
+            </div>
+            <select class="filter-select"><option>Owner</option></select>
+            <div class="spacer"></div>
+            <select class="filter-select"><option>Saved filters</option></select>
+            <button class="filter-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h10M4 8h6M6 12h2"/></svg>
+              Advanced filters
+            </button>
+            <button class="filter-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2v10M4 2l-3 3M4 2l3 3M10 12V2M10 12l-3-3M10 12l3-3"/></svg>
+              Sort
+            </button>
+          </div>
+          <div class="kanban-board" id="kanban-board">
+            <!-- Columns populated by JS -->
+          </div>
+        </section>
+
+        <!-- OPPORTUNITY DETAIL -->
+        <section id="page-opportunity-detail" class="page">
+          <div class="detail-nav">
+            <button class="back-link" onclick="navigate('opportunities')">&#8249; Back to Opportunities</button>
+            <div class="detail-actions">
+              <button class="btn-text" id="opp-cancel-btn" style="display:none" onclick="toggleOppEdit(false)">Cancel</button>
+              <button class="btn-primary" id="opp-save-btn" style="display:none" onclick="toggleOppEdit(false)">Save</button>
+              <button class="btn-text" id="opp-edit-btn" onclick="toggleOppEdit(true)">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.5 1.5l2 2L4 12H2v-2L10.5 1.5z"/></svg>
+                Edit
+              </button>
+            </div>
+          </div>
+
+          <div class="opp-header-card card">
+            <h2 class="opp-title" id="opp-title">ABC Renovation</h2>
+            <div class="opp-meta">
+              <div class="meta-field"><label>Contact</label><div class="meta-value" id="opp-contact">John Doe</div></div>
+              <div class="meta-field"><label>Deal value</label><div class="meta-value" id="opp-value">$1,000,000</div></div>
+              <div class="meta-field"><label>Stage</label><div class="meta-value">Verbal Commit <span class="badge-muted">at stage for 2 months</span></div></div>
+              <div class="meta-field"><label>Deal probability</label><div class="meta-value"><div class="prob-bar"><div class="prob-fill" style="width:90%"></div></div> 90%</div></div>
+              <div class="meta-field"><label>Close date</label><div class="meta-value">Feb 26, 2026 <span class="badge-warning-sm">5 days away</span></div></div>
+              <div class="meta-field"><label>Project start</label><div class="meta-value">April 2026</div></div>
+            </div>
+          </div>
+
+          <div class="opp-body">
+            <div class="opp-left">
+              <div class="opp-tabs">
+                <button class="opp-tab active" data-tab="activities" onclick="switchOppTab('activities')">Activities</button>
+                <button class="opp-tab" data-tab="documents" onclick="switchOppTab('documents')">Documents</button>
+                <button class="opp-tab" data-tab="estimates" onclick="switchOppTab('estimates')">Estimates</button>
+                <button class="opp-tab" data-tab="emails" onclick="switchOppTab('emails')">Emails</button>
+              </div>
+
+              <!-- Activities Tab -->
+              <div class="opp-tab-content active" id="tab-activities">
+                <div class="add-task-row">
+                  <input type="text" placeholder="Add new task" class="task-input">
+                  <button class="btn-primary btn-sm">Add</button>
+                </div>
+                <div class="task-section-label">Upcoming</div>
+                <div class="task-list">
+                  <div class="task-item suggested">
+                    <input type="checkbox">
+                    <span>Follow-up for ABC Construction</span>
+                    <span class="badge-suggested">&#10024; Suggested</span>
+                    <span class="task-due overdue">Overdue 3 days</span>
+                    <button class="icon-btn-sm">&#10003;</button>
+                    <button class="icon-btn-sm">&times;</button>
+                  </div>
+                  <div class="task-item suggested">
+                    <input type="checkbox">
+                    <span>Send estimate to DPR Construction</span>
+                    <span class="badge-suggested">&#10024; Suggested</span>
+                    <span class="task-due">Due tomorrow</span>
+                    <button class="icon-btn-sm">&#10003;</button>
+                    <button class="icon-btn-sm">&times;</button>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox">
+                    <span>Call Tom Chen</span>
+                    <span class="task-due">Due Feb 2, 2026</span>
+                    <button class="icon-btn">&#128276;</button>
+                    <button class="icon-btn call-btn">&#128222;</button>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox">
+                    <span>Generate estimate for BER Construction</span>
+                    <span class="task-due">Due Mar 25, 2026</span>
+                    <button class="icon-btn">&#128276;</button>
+                    <button class="icon-btn doc-btn">&#128196;</button>
+                  </div>
+                </div>
+                <div class="activity-search">
+                  <input type="text" placeholder='Search activities ... "submitted estimate"'>
+                  <svg class="search-icon" width="16" height="16" fill="none" stroke="#888" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+                </div>
+                <div class="task-section-label collapsible">This week <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></div>
+                <div class="activity-feed">
+                  <div class="activity-item">
+                    <div class="activity-icon call">&#128222;</div>
+                    <div class="activity-content">
+                      <div>Call with <strong>Tom Chen (BER Construction)</strong> <span class="activity-date">Yesterday</span></div>
+                      <div class="activity-detail">
+                        <span class="toggle-link">&#8963; Hide all changes</span>
+                        <div class="activity-sub">Added <a href="#">document.pdf</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-icon update">&#128203;</div>
+                    <div class="activity-content">
+                      <div>Bidding status updated <strong>(DPR Construction)</strong> <span class="activity-date">2 days ago</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Documents Tab -->
+              <div class="opp-tab-content" id="tab-documents">
+                <table class="data-table">
+                  <thead><tr><th>DOCUMENT</th><th>SOURCE</th><th>DATE</th></tr></thead>
+                  <tbody>
+                    <tr><td><a href="#">HVAC Load Calculations.xlsx</a></td><td>BER Construction</td><td>Feb 1, 2026</td></tr>
+                    <tr><td><a href="#">Estimate_breakdown_ABC.pdf</a></td><td>ABC Construction</td><td>Jan 26, 2026</td></tr>
+                    <tr><td><a href="#">Specs_v3.pdf</a></td><td>Owner</td><td>Jan 28, 2026</td></tr>
+                    <tr><td><a href="#">Specs_v2.pdf</a></td><td>Owner</td><td>Dec 29, 2025</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Estimates Tab -->
+              <div class="opp-tab-content" id="tab-estimates">
+                <div class="estimates-header">
+                  <button class="btn-primary btn-sm">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="10" height="10" rx="1"/><path d="M7 5v4M5 7h4"/></svg>
+                    Create new estimate
+                  </button>
+                  <button class="filter-btn">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2v10M4 2l-3 3M4 2l3 3M10 12V2M10 12l-3-3M10 12l3-3"/></svg>
+                    Sort
+                  </button>
+                </div>
+                <table class="data-table">
+                  <thead><tr><th>ESTIMATE</th><th>AMOUNT</th><th>DATE</th><th>STATUS</th></tr></thead>
+                  <tbody>
+                    <tr><td><a href="#">ABC_estimate_breakdown.pdf</a></td><td>$600,000</td><td>Feb 1, 2026</td><td><span class="status-badge accepted">Accepted</span></td></tr>
+                    <tr><td><a href="#">DPR_estimate_breakdown.pdf</a></td><td>$650,000</td><td>Feb 6, 2026</td><td><span class="status-badge pending">Pending</span></td></tr>
+                    <tr><td><a href="#">BER_estimate_breakdown.pdf</a></td><td>$580,000</td><td>Jan 15, 2026</td><td><span class="status-badge drafted">Drafted</span></td></tr>
+                  </tbody>
+                </table>
+                <div class="table-count">1-3 of 3</div>
+              </div>
+
+              <!-- Emails Tab -->
+              <div class="opp-tab-content" id="tab-emails">
+                <div class="empty-state">No emails linked to this opportunity yet.</div>
+              </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="opp-right">
+              <div class="card bidding-card">
+                <h3>Bidding</h3>
+                <table class="data-table compact">
+                  <thead><tr><th>Company</th><th>Contact</th><th>Current bid</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>ABC Construction</td><td>Mike Johnson</td><td>$100,000</td><td><span class="status-badge lost">Lost</span></td></tr>
+                    <tr><td>DPR Construction</td><td>Tom Chen</td><td>$120,000</td><td><span class="status-badge accepted">Accepted</span></td></tr>
+                    <tr><td>BER Construction</td><td>Mike Johnson</td><td>$100,000</td><td><span class="status-badge pending">Pending</span></td></tr>
+                  </tbody>
+                </table>
+                <div class="bidding-history">
+                  <h4>Bidding History <span class="badge-select">ABC Construction &#9662;</span></h4>
+                  <div class="year-label">2026 <svg width="12" height="12" fill="none" stroke="#888" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></div>
+                  <div class="timeline">
+                    <div class="timeline-item"><div class="tl-dot red"></div><div>Bid status updated &rarr; <strong>Lost</strong> <span class="tl-date">Feb1</span></div></div>
+                    <div class="timeline-item"><div class="tl-dot green"></div><div>Bid changed: <strong>$110,000</strong> <span class="tl-date">Feb 1</span></div></div>
+                    <div class="timeline-item"><div class="tl-dot green"></div><div>Bid changed: <strong>$100,000</strong> <span class="tl-date">Jan 16</span></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="card notes-card">
+                <h3>Notes</h3>
+                <textarea placeholder="Add notes..." rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ACCOUNTS LIST -->
+        <section id="page-accounts" class="page">
+          <div class="page-header">
+            <div class="search-bar">
+              <input type="text" placeholder='Ask about your accounts... "highest value"'>
+              <svg class="search-icon" width="18" height="18" fill="none" stroke="#888" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M13 13l4 4"/></svg>
+            </div>
+            <div class="spacer"></div>
+            <select class="filter-select"><option>Saved filters</option></select>
+            <button class="filter-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h10M4 8h6M6 12h2"/></svg>
+              Advanced filters
+            </button>
+            <button class="btn-primary btn-sm">+ New account</button>
+          </div>
+          <div class="card table-card">
+            <table class="data-table full-table sortable">
+              <thead>
+                <tr>
+                  <th>Account name &#8595;</th>
+                  <th>Type &#8595;</th>
+                  <th>Last activity &#8595;</th>
+                  <th>Comm. strength &#8595;</th>
+                  <th>Value &#8595;</th>
+                  <th>Pipeline &#8595;</th>
+                  <th>Account owner &#8595;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="showAccountDetail('ace-hardware')"><td>Ace Hardware</td><td>Customer</td><td>Feb 1, 2026</td><td>Moderate</td><td>$1.5M</td><td>Active</td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showAccountDetail('target')"><td>Target</td><td>Prospect</td><td>Feb 19, 2026</td><td>Weak</td><td>$0</td><td>Inactive</td><td>Sarah Kim</td></tr>
+                <tr onclick="showAccountDetail('menards')"><td>Menards</td><td>Customer</td><td>Feb 20, 2026</td><td>Moderate</td><td>$150,000</td><td>Active</td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showAccountDetail('artguild')"><td>ArtGuild</td><td>Customer</td><td>Jan 3, 2026</td><td>Moderate</td><td>$3.2M</td><td>Active</td><td>Sarah Kim</td></tr>
+                <tr onclick="showAccountDetail('hom-furniture')"><td>HOM Furniture</td><td>Prospect</td><td>Dec 19, 2025</td><td>Strong</td><td>$0</td><td>Inactive</td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showAccountDetail('vanguard')"><td>Vanguard</td><td>Customer</td><td>Feb 1, 2026</td><td>Weak</td><td>$500,000</td><td>Active</td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showAccountDetail('array-macys')"><td>Array Macy's Beauty</td><td>Customer</td><td>Feb 1, 2026</td><td>Weak</td><td>$500,000</td><td>Active</td><td>Marcus Reynolds</td></tr>
+              </tbody>
+            </table>
+            <div class="table-footer">Showing 1-7 of 7 <span class="pagination">&#8249; 1 &#8250;</span></div>
+          </div>
+        </section>
+
+        <!-- ACCOUNT DETAIL -->
+        <section id="page-account-detail" class="page">
+          <div class="detail-nav">
+            <button class="back-link" onclick="navigate('accounts')">&#8249; Back to Accounts</button>
+            <div class="detail-actions">
+              <button class="btn-text" onclick="navigate('accounts')">Cancel</button>
+              <button class="btn-primary">Save</button>
+            </div>
+          </div>
+          <div class="account-header card">
+            <div class="account-title-row">
+              <h2 id="account-name">Ace Hardware</h2>
+              <span class="account-type-badge" id="account-type">Customer</span>
+            </div>
+            <div class="opp-meta">
+              <div class="meta-field"><label>Industry</label><div class="meta-value">Retail</div></div>
+              <div class="meta-field"><label>Pipeline value</label><div class="meta-value" id="account-pipeline-val">$1.5M</div></div>
+              <div class="meta-field"><label>Comm. strength</label><div class="meta-value">Moderate</div></div>
+              <div class="meta-field"><label>Account owner</label><div class="meta-value" id="account-owner">Marcus Reynolds</div></div>
+              <div class="meta-field"><label>Status</label><div class="meta-value"><span class="status-badge accepted">Active</span></div></div>
+            </div>
+          </div>
+          <div class="opp-tabs" style="margin-top:16px">
+            <button class="opp-tab active" onclick="switchAccountTab('acc-opportunities')">Opportunities</button>
+            <button class="opp-tab" onclick="switchAccountTab('acc-activities')">Activities</button>
+            <button class="opp-tab" onclick="switchAccountTab('acc-notes')">Notes</button>
+          </div>
+          <div class="opp-tab-content active" id="tab-acc-opportunities">
+            <div class="task-section-label">Active</div>
+            <div class="opp-cards-list" id="account-opps">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          <div class="opp-tab-content" id="tab-acc-activities">
+            <div class="activity-feed">
+              <div class="activity-item"><div class="activity-icon call">&#128222;</div><div class="activity-content"><div>Call with <strong>Bob Menard</strong> <span class="activity-date">Feb 1, 2026</span></div></div></div>
+              <div class="activity-item"><div class="activity-icon update">&#128203;</div><div class="activity-content"><div>Quote sent for Kitchen Remodel <span class="activity-date">Jan 28, 2026</span></div></div></div>
+            </div>
+          </div>
+          <div class="opp-tab-content" id="tab-acc-notes">
+            <textarea placeholder="Add notes about this account..." rows="4" class="notes-area"></textarea>
+          </div>
+        </section>
+
+        <!-- CONTACTS LIST -->
+        <section id="page-contacts" class="page">
+          <div class="page-header">
+            <div class="search-bar">
+              <input type="text" placeholder='Ask about your contacts... "low activity"'>
+              <svg class="search-icon" width="18" height="18" fill="none" stroke="#888" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M13 13l4 4"/></svg>
+            </div>
+            <div class="spacer"></div>
+            <select class="filter-select"><option>Saved filters</option></select>
+            <button class="filter-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h10M4 8h6M6 12h2"/></svg>
+              Advanced filters
+            </button>
+            <button class="btn-primary btn-sm">+ New contact</button>
+          </div>
+          <div class="card table-card">
+            <table class="data-table full-table sortable">
+              <thead>
+                <tr>
+                  <th>Name &#8595;</th>
+                  <th>Account &#8595;</th>
+                  <th>Last contacted &#8595;</th>
+                  <th>Location &#8595;</th>
+                  <th>Preferred &#8595;</th>
+                  <th>Actions</th>
+                  <th>Account owner &#8595;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="showContactDetail('bob-menard')"><td><strong>Bob Menard</strong><br><span class="sub">Purchasing Director</span></td><td>Menards</td><td>Feb 1, 2026</td><td>Phoenix, AZ</td><td>Email</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showContactDetail('carol-brand')"><td><strong>Carol Brand</strong><br><span class="sub">Sales Director</span></td><td>Ace Hardware</td><td>Feb 20, 2026</td><td>New York City,...</td><td>Call</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showContactDetail('john-doe')"><td><strong>John Doe</strong><br><span class="sub">Head of Marketing</span></td><td>Target</td><td>Feb 10, 2026</td><td>Sunnyvale, CA</td><td>Email</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Sarah Kim</td></tr>
+                <tr onclick="showContactDetail('emma-v')"><td><strong>Emma V</strong><br><span class="sub">Regional Manager</span></td><td>Lowe's</td><td>Dec 19, 2025</td><td>Chicago, IL</td><td>--</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showContactDetail('kevin-marsh')"><td><strong>Kevin Marsh</strong><br><span class="sub">Head of Marketing</span></td><td>Lowe's</td><td>Feb 1, 2026</td><td>Chicago, IL</td><td>Email</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showContactDetail('lisa-park')"><td><strong>Lisa Park</strong><br><span class="sub">Merchandise Director</span></td><td>Lowe's</td><td>Feb 1, 2026</td><td>Chicago, IL</td><td>Email</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Marcus Reynolds</td></tr>
+                <tr onclick="showContactDetail('tom-chen')"><td><strong>Tom Chen</strong><br><span class="sub">Recruiter</span></td><td>Target</td><td>Feb 1, 2026</td><td>Salt Lake City, UT</td><td>Email</td><td class="action-btns"><button class="icon-btn-outline">&#9993;</button><button class="icon-btn-outline">&#128222;</button></td><td>Marcus Reynolds</td></tr>
+              </tbody>
+            </table>
+            <div class="table-footer">Showing 1-7 of 7 <span class="pagination">&#8249; 1 &#8250;</span></div>
+          </div>
+        </section>
+
+        <!-- CONTACT DETAIL -->
+        <section id="page-contact-detail" class="page">
+          <div class="detail-nav">
+            <button class="back-link" onclick="navigate('contacts')">&#8249; Back to Contacts</button>
+            <div class="detail-actions">
+              <button class="icon-btn-outline">&#9993; Send email</button>
+              <button class="icon-btn-outline">&#128222; Call</button>
+            </div>
+          </div>
+          <div class="contact-profile card">
+            <div class="contact-profile-header">
+              <div class="contact-avatar" id="contact-avatar">JD</div>
+              <div>
+                <h2 id="contact-name">John Doe</h2>
+                <span class="contact-location" id="contact-location">Sunnyvale, CA</span>
+              </div>
+            </div>
+            <p class="contact-role" id="contact-role"><em>Head of Marketing</em> at <a href="#" id="contact-company-link">Target</a></p>
+          </div>
+          <div class="contact-body">
+            <div class="contact-left">
+              <div class="card">
+                <h3>Contact Information</h3>
+                <div class="contact-info-grid">
+                  <div class="info-row"><label>Email <span class="badge-preferred">Preferred</span></label><div id="contact-email">john.doe@target.com</div></div>
+                  <div class="info-row"><label>Mobile</label><div id="contact-phone">(456) 555-0101</div></div>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Engagement</h3>
+                <div class="engagement-stats">
+                  <div class="eng-stat"><span class="eng-val">12</span><span class="eng-label">Emails sent</span></div>
+                  <div class="eng-stat"><span class="eng-val">8</span><span class="eng-label">Meetings</span></div>
+                  <div class="eng-stat"><span class="eng-val">3</span><span class="eng-label">Open deals</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="contact-right">
+              <div class="card">
+                <h3>Recent Activity</h3>
+                <div class="activity-feed">
+                  <div class="activity-item"><div class="activity-icon call">&#128222;</div><div class="activity-content"><div>Phone call <span class="activity-date">Feb 10, 2026</span></div></div></div>
+                  <div class="activity-item"><div class="activity-icon update">&#9993;</div><div class="activity-content"><div>Email: RE: Q1 Projections <span class="activity-date">Feb 8, 2026</span></div></div></div>
+                  <div class="activity-item"><div class="activity-icon update">&#128203;</div><div class="activity-content"><div>Meeting scheduled <span class="activity-date">Feb 5, 2026</span></div></div></div>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Notes</h3>
+                <textarea placeholder="Add notes about this contact..." rows="3" class="notes-area"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
