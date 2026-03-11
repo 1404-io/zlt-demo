@@ -138,9 +138,9 @@ const kanbanData = {
     { company: 'Home Depot', companyColor: '#F59E0B', bids: 0, date: 'Mar 8', title: 'HVAC Replacement — Northeast Region', amount: '$100,000', sub: 'Created 5 days ago' }
   ]},
   'Needs Analysis': { count: 3, total: '$1,019,000', cards: [
-    { company: "Lowe's", companyColor: '#2D4A3E', bids: 2, date: 'Mar 5', title: 'Kitchen Remodel— Store #1842', amount: '$390,000', sub: 'Created 2 days ago' },
     { company: "Lowe's", companyColor: '#2D4A3E', bids: 3, date: 'Mar 5', title: 'Bathroom Package — 15 Stores', amount: '$627,000', sub: 'No activity for 6 months' },
-    { company: 'Target', companyColor: '#EF4444', bids: 3, date: 'Mar 5', title: 'Storefront Refresh — Store #1842', amount: '$208,000', overdue: '2 days', sub: 'No activity for 3 months' }
+    { company: 'Target', companyColor: '#EF4444', bids: 3, date: 'Mar 5', title: 'Storefront Refresh — Store #1842', amount: '$208,000', overdue: '2 days', sub: 'No activity for 3 months' },
+    { company: "Lowe's", companyColor: '#2D4A3E', bids: 3, date: 'Mar 5', title: "Lowe's Rural Kitchens — Store #1842", amount: '$390,000', overdue: '2 days' }
   ]},
   'Estimate Prep': { count: 4, total: '$1,560,000', cards: [
     { company: "Lowe's", companyColor: '#2D4A3E', bids: 3, date: 'Mar 5', title: "Lowe's Rural Kitchens — Store #1842", amount: '$390,000', overdue: '2 days', sub: 'No activity for 3 months' },
